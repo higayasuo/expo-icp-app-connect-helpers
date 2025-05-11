@@ -16,7 +16,7 @@ export default defineConfig({
       fileName: (format) => `index.${format === 'es' ? 'mjs' : 'cjs'}`
     },
     rollupOptions: {
-      external: ['expo-icp-frontend-helpers']
+      external: ['expo-icp-frontend-helpers', 'canister-manager']
     }
   }
 })
