@@ -27,7 +27,15 @@
     "type": "git",
     "url": "git+https://github.com/higayasuo/expo-icp-app-connect-helpers.git"
   },
-  "keywords": [],
+  "keywords": [
+    "expo",
+    "react-native",
+    "internet-computer",
+    "internet identity",
+    "icp",
+    "dfinity",
+    "typescript"
+  ],
   "author": "Yasuo Higa",
   "license": "MIT",
   "bugs": {
