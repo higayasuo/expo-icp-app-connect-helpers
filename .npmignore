@@ -1,0 +1,34 @@
+# Source files
+src/
+__tests__/
+*.ts
+*.tsx
+!*.d.ts
+
+# Configuration files
+tsconfig.json
+tsconfig.node.json
+vite.config.ts
+.gitignore
+.npmignore
+
+# Development files
+coverage/
+.vscode/
+.idea/
+*.log
+*.test.ts
+*.spec.ts
+
+# Git
+.git/
+.gitattributes
+.gitignore
+
+# Misc
+.DS_Store
+*.swp
+*.swo
+
+# npm pack
+*.tgz
