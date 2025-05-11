@@ -86,6 +86,36 @@ Builds connection parameters for deep linking to an Internet Computer applicatio
 
 `DeepLinkConnectionParams` - The connection parameters with deep link type
 
+### parseDeepLinkConnectionParams
+
+Parses deep link connection parameters from a URL query string.
+
+#### Parameters
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| paramsStr | string | Yes | The URL query string to parse |
+| requiredKeys | (keyof P)[] | No | Additional required keys to validate beyond the default ones |
+
+#### Returns
+
+`P` - The parsed parameters, where P extends Required<DeepLinkConnectionParams>
+
+#### Example
+
+```typescript
+// Parse with default required keys (sessionId and deepLinkType)
+const params = parseDeepLinkConnectionParams(
+  'sessionId=abc123&deepLinkType=expo-go'
+);
+
+// Parse with additional required keys
+const params = parseDeepLinkConnectionParams<Required<DeepLinkConnectionParams> & { customKey: string }>(
+  'sessionId=abc123&deepLinkType=development&customKey=value',
+  'customKey'
+);
+```
+
 ## Development
 
 ```bash
