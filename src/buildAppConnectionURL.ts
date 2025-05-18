@@ -12,7 +12,7 @@ import { concatPaths } from 'expo-icp-frontend-helpers';
  * @property {string} targetCanisterId - The ID of the target canister to connect to
  * @property {string} [pathname] - Optional pathname to append to the URL
  */
-type BuildAppConnectionURLParams = {
+export type BuildAppConnectionURLParams = {
   dfxNetwork: string;
   localIPAddress: string;
   replicaPort?: number;

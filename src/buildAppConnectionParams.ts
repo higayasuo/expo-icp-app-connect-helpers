@@ -9,7 +9,7 @@ import { DeepLinkConnectionParams } from './types';
  * @property {string | undefined} easDeepLinkType - Optional EAS deep link type for Expo builds
  * @property {string} pathname - The pathname to be used in the deep link
  */
-type BuildAppConnectionParamsParams = {
+export type BuildAppConnectionParamsParams = {
   deepLink: string;
   frontendCanisterId: string;
   easDeepLinkType: string | undefined;

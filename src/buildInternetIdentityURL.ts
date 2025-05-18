@@ -10,7 +10,7 @@ import { CanisterManager } from 'canister-manager';
  * @property {number} [internetIdentityPort] - Optional port number for Internet Identity
  * @property {string} targetCanisterId - The ID of the target canister to connect to
  */
-type BuildInternetIdentityURLParams = {
+export type BuildInternetIdentityURLParams = {
   dfxNetwork: string;
   localIPAddress: string;
   replicaPort?: number;
