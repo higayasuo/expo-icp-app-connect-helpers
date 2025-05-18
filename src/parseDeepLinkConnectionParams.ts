@@ -1,12 +1,12 @@
-import { parseParams, isDeepLinkType } from 'expo-icp-frontend-helpers'
-import { DeepLinkConnectionParams } from "./types";
+import { parseParams, isDeepLinkType } from 'expo-icp-frontend-helpers';
+import { DeepLinkConnectionParams } from './types';
 
 /**
  * Default required keys for deep link connection parameters
  * - sessionId: Unique identifier for the connection session
  * - deepLinkType: Type of deep link (e.g., 'expo-go')
  */
-const defaultRequiredKeys = ['sessionId', 'deepLinkType'] as const;
+const defaultRequiredKeys = ['sessionId', 'deepLinkType', 'pathname'] as const;
 
 /**
  * Parses deep link connection parameters from a URL query string
@@ -26,11 +26,15 @@ const defaultRequiredKeys = ['sessionId', 'deepLinkType'] as const;
  *   'customKey'
  * );
  */
-export const parseDeepLinkConnectionParams = <P extends Required<DeepLinkConnectionParams>>(
+export const parseDeepLinkConnectionParams = <
+  P extends Required<DeepLinkConnectionParams>,
+>(
   paramsStr: string,
   ...requiredKeys: (keyof P)[]
 ): P => {
-  const keys = [...new Set([...defaultRequiredKeys, ...requiredKeys])] as (keyof P)[];
+  const keys = [
+    ...new Set([...defaultRequiredKeys, ...requiredKeys]),
+  ] as (keyof P)[];
 
   const params = parseParams<P>(paramsStr, ...keys);
 

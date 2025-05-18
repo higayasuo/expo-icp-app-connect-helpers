@@ -53,6 +53,6 @@
   },
   "peerDependencies": {
     "canister-manager": "^0.1.7",
-    "expo-icp-frontend-helpers": "^0.1.12"
+    "expo-icp-frontend-helpers": "^0.1.13"
   }
 }

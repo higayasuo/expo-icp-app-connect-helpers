@@ -1,4 +1,4 @@
-import { DeepLinkType } from "expo-icp-frontend-helpers";
+import { DeepLinkType } from 'expo-icp-frontend-helpers';
 
 /**
  * Represents parameters that may include a session ID.
@@ -15,4 +15,5 @@ export type ParamsWithSessionId = {
  */
 export type DeepLinkConnectionParams = ParamsWithSessionId & {
   deepLinkType: DeepLinkType;
+  pathname: string;
 };

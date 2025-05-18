@@ -1,5 +1,5 @@
-import { getDeepLinkType } from "expo-icp-frontend-helpers";
-import { DeepLinkConnectionParams } from "./types";
+import { getDeepLinkType } from 'expo-icp-frontend-helpers';
+import { DeepLinkConnectionParams } from './types';
 
 /**
  * Parameters for building app connection parameters
@@ -7,12 +7,14 @@ import { DeepLinkConnectionParams } from "./types";
  * @property {string} deepLink - The deep link URL to be processed
  * @property {string} frontendCanisterId - The ID of the frontend canister
  * @property {string | undefined} easDeepLinkType - Optional EAS deep link type for Expo builds
+ * @property {string} pathname - The pathname to be used in the deep link
  */
 type BuildAppConnectionParamsParams = {
   deepLink: string;
   frontendCanisterId: string;
   easDeepLinkType: string | undefined;
-}
+  pathname: string;
+};
 
 /**
  * Builds connection parameters for deep linking to an Internet Computer application
@@ -23,14 +25,16 @@ type BuildAppConnectionParamsParams = {
  * const params = buildAppConnectionParams({
  *   deepLink: 'exp://192.168.1.210:8081',
  *   frontendCanisterId: 'rrkah-fqaaa-aaaaa-aaaaq-cai',
- *   easDeepLinkType: 'development'
+ *   easDeepLinkType: undefined,
+ *   pathname: '/dashboard'
  * });
  */
 export const buildAppConnectionParams = <P extends DeepLinkConnectionParams>({
   deepLink,
   frontendCanisterId,
   easDeepLinkType,
-}: BuildAppConnectionParamsParams) => {
+  pathname,
+}: BuildAppConnectionParamsParams): P => {
   const deepLinkType = getDeepLinkType({
     deepLink,
     frontendCanisterId,
@@ -39,5 +43,6 @@ export const buildAppConnectionParams = <P extends DeepLinkConnectionParams>({
 
   return {
     deepLinkType,
+    pathname,
   } as P;
-}
+};

@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.3] - 2025-05-18
+
+### Added
+
+- `buildInternetIdentityURL` function for building URLs to connect to Internet Identity
+- Support for custom Internet Identity port configuration
+- Added `pathname` parameter to `buildAppConnectionURL` function (optional, defaults to '/')
+- Added `pathname` parameter to `buildAppConnectionParams` function (required)
+- Added `pathname` to default required keys in `parseDeepLinkConnectionParams` function
+- Comprehensive test suite for Internet Identity URL building functionality
+- Updated test suites to cover pathname functionality
+- Updated documentation with new function examples and API reference
+
 ## [0.1.2] - 2025-05-11
 
 ### Added
